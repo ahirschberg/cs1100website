@@ -1,0 +1,260 @@
+html {
+  height: 100%
+}
+
+body {
+    margin:0;
+    background-image: url("../img/bg.png");
+    font: 12pt Arial, Helvetica, sans-serif;
+    min-width: 800px;
+    height: 100%;
+}
+
+header {
+    opacity: 100;
+    position:fixed;
+    float: left;
+    margin: 0;
+    width: 100%;
+    height: 50px;
+    padding: 0;
+
+    z-index: 2;
+
+    background-color: gray;
+    background-repeat: repeat-x;
+    background-size: 100% 100%;
+    background-image: url("../img/green_gradient_h57px.png");
+    
+    font-size: 22px;
+    color: white;
+    
+    box-shadow: 0px 0px 20px #444444;
+    
+    /* Fix width of element being larger than screen size due to padding */
+    -webkit-box-sizing: border-box; /* WebKit */
+    -moz-box-sizing: border-box;    /* Firefox */
+    box-sizing: border-box; /* Standard */
+    
+    /*Transitions (decided not to use)
+    transition-property: box-shadow, background, opacity;
+    transition-duration: 1s;*/
+}
+/*header:hover {
+    opacity: 1.0;
+    transition-property: box-shadow, background, opacity;
+    transition-duration: 1s;
+    box-shadow:0px 0px 30px 5px rgb(34, 79, 223);
+    background-color:rgb(54, 99, 243);
+    /*background-size: 100% 1px, 100% 100%;
+    background-repeat: repeat-x;
+    background-image: url("img/green_gradient_h57px.png");
+}*/
+
+/* Add an easter egg when element is hovered over */
+span.illuminatti {
+    display:inline-block;
+    background-image: none;
+    height: auto;
+    width: auto;
+    transition-property: background, height, width;
+    transition-duration: 1s;
+}
+span.illuminatti:hover  {
+}
+span.illuminatti:hover:after {
+    float:right;
+    display: block;
+    color: black;
+    line-height: 50px;
+    font-size: 24pt;
+    text-shadow: 0px 0px 5px #FF0000;
+    background-image: url("../img/illuminattiwow.png");
+    background-size: auto 50px;
+    height: 1000px;
+    width: 500px;
+    content:"Wow such illuminatti Wow such illuminatti Wow such illuminatti Wow such illuminatti Wow such illuminatti Wow such illuminatti ";
+}
+
+
+
+/* Sets style for links in header */
+a.headlink {
+    color: white;
+    text-decoration: none;
+    display:inline-block;
+    height: inherit;
+    width: auto;
+    line-height: 50px;
+    
+    /* In case transition ever becomes default for links */
+    transition: none !important;    
+}
+a.headlink:hover{
+    background-color: rgb(153, 153, 153);
+    background-image: url("img/green_gradient_h57px.png");
+    
+}
+
+a:hover {
+    transition: color, 0.5s;
+    color: rgb(255, 168, 15);
+}
+a:active {
+    color: rgb(255, 102, 0);
+}
+
+span.headlink {
+    padding: 0 10px;
+}
+
+/* Add green outline on bottom of header, and make it highlight when links are selected */
+header:after, a.headlink:after {
+    width: 100%;
+    position: relative;
+    top: -2px;
+    height: 3px;
+    background-color: rgb(189, 189, 189);
+    
+    /* Element will not display without content set */
+    content:"";
+    display:block;
+    z-index:1;
+}
+a.headlink:after {
+    transition: background 1s;
+}
+a.headlink:hover:after {
+    background-color: rgb(255, 153, 0);
+    z-index:2;
+    
+    transition: background .5s;
+}
+
+div.left-column {
+    float:left;
+    border-right: 1px solid black;
+    padding:0;
+    text-align:center;
+    width: 50pt;
+    height: auto;
+    overflow: hidden;
+}
+
+/* Main "page" of content, centered by setting left and right margins to auto */
+div.body-content {
+    max-width: 1536px;
+    margin-left:auto;
+    margin-right:auto;
+    padding: 70px 50px 20px 70px;
+    
+    /* For mlg.js script */
+    position: relative;
+
+    background-color: rgb(248, 248, 248);
+    
+    box-shadow: 0px 0px 20px #444444;
+    border-radius: 5px;
+    
+    /*Fix width of element being larger than intended due to padding*/
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+}
+
+p {
+    color: rgb(32, 32, 32);
+}
+
+/* Allows image to be positioned inline with text, and causes the text to wrap */
+.paragraph-inline {
+    display: inline-flex;
+    margin-right: 20px;
+    float:left;
+    margin-right: 40px;
+    border: 3px solid rgb(189, 189, 189);
+}
+img.paragraph-inline {
+}
+
+li {
+    margin: 10px 0px;
+}
+
+div.code_container {
+    background-color: rgb(207, 146, 207);
+    border: 2px solid rgb(184, 110, 184);
+    border-radius: 0 0 1px 1px;
+    margin: 0 0 20px 0;
+    padding: 10px;
+    
+}
+div.code_cont_title {
+    background-color: rgb(184, 110, 184);
+    border-radius: 1px 1px 0 0;
+    padding: 10px;
+    text-align: center;
+}
+pre.code{
+    color: white;
+    background-color: rgb(83, 40, 97);
+    padding: 15px;
+    border-radius: 2px;
+    margin: 10px 10px;
+}
+
+button.general_button{
+    font-size:20px;
+    padding: 10px 20px 10px 20px;
+    border:2px solid #075B9C;
+    background-color: #5ECAEC;
+    border-radius: 3px;
+    
+    background: -moz-linear-gradient(top, rgba(94,202,236,1) 0%, rgba(81,179,232,1) 40%, rgba(5,162,193,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(94,202,236,1)), color-stop(40%,rgba(81,179,232,1)), color-stop(100%,rgba(5,162,193,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(94,202,236,1) 0%,rgba(81,179,232,1) 40%,rgba(5,162,193,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(94,202,236,1) 0%,rgba(81,179,232,1) 40%,rgba(5,162,193,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(94,202,236,1) 0%,rgba(81,179,232,1) 40%,rgba(5,162,193,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(94,202,236,1) 0%,rgba(81,179,232,1) 40%,rgba(5,162,193,1) 100%); /* W3C */
+}
+button.general_button:hover {
+    border: 2px solid #075B9C;
+    background-color: #8DD9F1;
+    box-shadow: 0px 0px 5px 3px rgba(0, 60, 248, 0.47);
+    
+    background: -moz-linear-gradient(top, rgba(141,217,241,1) 0%, rgba(83,201,237,1) 40%, rgba(6,174,204,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(141,217,241,1)), color-stop(40%,rgba(83,201,237,1)), color-stop(100%,rgba(6,174,204,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(141,217,241,1) 0%,rgba(83,201,237,1) 40%,rgba(6,174,204,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(141,217,241,1) 0%,rgba(83,201,237,1) 40%,rgba(6,174,204,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(141,217,241,1) 0%,rgba(83,201,237,1) 40%,rgba(6,174,204,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(141,217,241,1) 0%,rgba(83,201,237,1) 40%,rgba(6,174,204,1) 100%); /* W3C */
+}
+button.general_button:active {
+    background-color: #3EBCE4;
+    
+    background: -moz-linear-gradient(top, rgba(62,188,228,1) 0%, rgba(82,173,229,1) 40%, rgba(5,155,196,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(62,188,228,1)), color-stop(40%,rgba(82,173,229,1)), color-stop(100%,rgba(5,155,196,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(62,188,228,1) 0%,rgba(82,173,229,1) 40%,rgba(5,155,196,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(62,188,228,1) 0%,rgba(82,173,229,1) 40%,rgba(5,155,196,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(62,188,228,1) 0%,rgba(82,173,229,1) 40%,rgba(5,155,196,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(62,188,228,1) 0%,rgba(82,173,229,1) 40%,rgba(5,155,196,1) 100%); /* W3C */
+}
+
+footer {
+    font-size: 16pt;
+    margin: 20px 0 0 0;
+    padding: 5px;
+    background-color: rgb(61, 61, 61);
+}
+
+.mlg{
+}
+img.mlg {
+  z-index: 1;
+  position: absolute;
+}
+
+#hitmark {
+  z-index:99999;
+}
+
