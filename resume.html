@@ -17,6 +17,46 @@
       font-size: 3em;
       margin: 100px;
     }
+    
+    .ui-button {
+      transition: none;
+      text-decoration: none;
+      color: #FFF;
+      border-radius: 3px;
+      padding: 20px;
+      background-color: #F8D335;
+      background: linear-gradient(to bottom, #efc23b 0%, #f2a635 78%);
+      box-shadow: 0px 7px 0px 0px rgb(255, 132, 0);
+      font-weight: 800;
+      font-family: Verdana;
+      font-size: 15pt;
+      width: 150px;
+      height: 50px;
+      line-height: 50px;
+      position: relative;
+      text-align: center;
+      /* blog only, need to add back into app styling */
+      
+      cursor: pointer;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    
+    .ui-button:hover {
+      color: #f5d4bb;
+    }
+    
+    .ui-button:active {
+      transition: none;
+
+      color: #fff;
+      top: 4px;
+      box-shadow: 0px 3px 0px 0px rgb(216, 112, 0);
+    }
   </style>
 </head>
 
@@ -31,7 +71,7 @@
   </header>
   <div class="body-content">
     <h1>Download Resume</h1>
-    <button href="resume.pdf">Download Alex Hirschberg's Resume</button>
+    <a class="ui-button" href="resume.pdf">Click here to view resume</a>
   </div>
 </body>
 
